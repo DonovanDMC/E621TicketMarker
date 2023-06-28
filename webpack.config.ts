@@ -15,23 +15,15 @@ export default {
     plugins: [
         new UserscriptPlugin({
             headers: {
-                "name":        "E621 Ticket Marker",
-                "description": "A way to mark e621 tickets you don't want to handle.",
+                "name":        "E621 Bulk Set Adder",
+                "description": "A way to bulk add posts to a set.",
                 version,
                 "license":     "MIT",
-                "supportURL":  "https://github.com/DonovanDMC/E621TicketMarker/issues",
                 "match":       [
-                    "https://e621.net/tickets*",
-                    "https://e926.net/tickets*"
+                    "https://e621.net/posts*",
+                    "https://e926.net/posts*"
                 ],
-                "run-at": "document-body",
-                "grant":  [
-                    "GM.getValue",
-                    "GM.setValue"
-                ],
-                "icon":        "https://raw.githubusercontent.com/DonovanDMC/E621TicketMarker/master/icon.png",
-                "updateURL":   "https://github.com/DonovanDMC/E621TicketMarker/releases/latest/download/script.meta.js",
-                "downloadURL": "https://github.com/DonovanDMC/E621TicketMarker/releases/latest/download/script.user.js"
+                "run-at": "document-body"
             }
         })
     ],
