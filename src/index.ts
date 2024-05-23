@@ -61,6 +61,10 @@ function unmarkButton(row: HTMLTableRowElement, element: HTMLTableCellElement) {
 }
 
 document.addEventListener("DOMContentLoaded", async() => {
+    const url = new URL(window.location.href);
+    if (!url.pathname.endsWith("/tickets")) {
+        return;
+    }
     const ticketListContainer = document.querySelector("div#c-tickets");
     assert(ticketListContainer !== null, "Could not find container");
 
