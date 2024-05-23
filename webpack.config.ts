@@ -1,5 +1,5 @@
 import type webpack from "webpack";
-import { UserscriptPlugin } from "webpack-userscript";
+import { RunAt, UserscriptPlugin } from "webpack-userscript";
 import { readFile } from "node:fs/promises";
 const { version } = JSON.parse(await readFile(new URL("package.json", import.meta.url), "utf8")) as { version: string; };
 
@@ -24,7 +24,7 @@ export default {
                     "https://e621.net/tickets*",
                     "https://e926.net/tickets*"
                 ],
-                "run-at": "document-body",
+                "run-at": RunAt.DocumentBody,
                 "grant":  [
                     "GM.getValue",
                     "GM.setValue"
